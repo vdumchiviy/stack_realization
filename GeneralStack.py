@@ -23,16 +23,17 @@ class GeneralStack():
         self.stack.append(item)
 
     def pop(self):
-        """This function removes the las item of the stack
+        """This function removes the last item of the stack, if exists
 
         Returns:
             Any: removed a last element of the stack
         """
         if self.size() > 0:
             return self.stack.pop()
+        return ""
 
     def peek(self):
-        """This function returns the last element of the stack
+        """This function returns the last element of the stack, if exists
 
         Returns:
             Any: A last element of the stack
