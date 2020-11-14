@@ -1,8 +1,7 @@
 class GeneralStack():
-    stack = list()
 
     def __init__(self):
-        pass
+        self.stack = list()
 
     def size(self):
         return len(self.stack)
@@ -38,7 +37,9 @@ class GeneralStack():
         Returns:
             Any: A last element of the stack
         """
-        return self.stack[-1]
+        if self.size() > 0:
+            return self.stack[-1]
+        return ""
 
 
 if __name__ == "__main__":
