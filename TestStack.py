@@ -6,7 +6,7 @@ class TestStack(unittest.TestCase):
 
     def setUp(self):
         self.stack = Stack()
-        print(f"setUp: stack size: {self.stack.size()}")
+        print(f"setUp: stack size: {self.stack.size()} in {self.stack}")
 
     def tearDown(self):
         print(f"tearDown: stack size: {self.stack.size()}")
