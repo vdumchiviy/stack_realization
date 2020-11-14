@@ -49,6 +49,118 @@ class TestStack(unittest.TestCase):
         actual = self.stack.isEmpty()
         self.assertEqual(actual, expected)
 
+    def test_stack_has_balance_1(self):
+        print("Test if stack is balanced 1: (((([{}])))) ")
+        expected = True
+        self.stack.push("(")
+        self.stack.push("(")
+        self.stack.push("(")
+        self.stack.push("(")
+        self.stack.push("[")
+        self.stack.push("{")
+        self.stack.push("}")
+        self.stack.push("]")
+        self.stack.push(")")
+        self.stack.push(")")
+        self.stack.push(")")
+        self.stack.push(")")
+        actual = self.stack.has_balance()
+        self.assertEqual(actual, expected)
+
+    def test_stack_has_balance_2(self):
+        print("Test if stack is balanced 2: [([])((([[[]]])))]{()} ")
+        expected = True
+        self.stack.push("[")
+        self.stack.push("(")
+        self.stack.push("[")
+        self.stack.push("]")
+        self.stack.push(")")
+        self.stack.push("(")
+        self.stack.push("(")
+        self.stack.push("(")
+        self.stack.push("[")
+        self.stack.push("[")
+        self.stack.push("[")
+        self.stack.push("]")
+        self.stack.push("]")
+        self.stack.push("]")
+        self.stack.push(")")
+        self.stack.push(")")
+        self.stack.push(")")
+        self.stack.push("]")
+        self.stack.push("{")
+        self.stack.push("(")
+        self.stack.push(")")
+        self.stack.push("}")
+        actual = self.stack.has_balance()
+        self.assertEqual(actual, expected)
+
+    def test_stack_has_balance_3(self):
+        print("Test if stack is balanced 3: \{\{[()]}} ")
+        expected = True
+        self.stack.push("{")
+        self.stack.push("{")
+        self.stack.push("[")
+        self.stack.push("(")
+        self.stack.push(")")
+        self.stack.push("]")
+        self.stack.push("}")
+        self.stack.push("}")
+        actual = self.stack.has_balance()
+        self.assertEqual(actual, expected)
+
+    def test_stack_has_not_balance_1(self):
+        print("Test if stack isn't balanced 1: }\{\} ")
+        expected = False
+        self.stack.push("}")
+        self.stack.push("{")
+        self.stack.push("}")
+        actual = self.stack.has_balance()
+        self.assertEqual(actual, expected)
+
+    def test_stack_has_not_balance_2(self):
+        print("Test if stack isn't balanced 2: {{[(])]}} ")
+        expected = False
+        self.stack.push("{")
+        self.stack.push("{")
+        self.stack.push("[")
+        self.stack.push("(")
+        self.stack.push("]")
+        self.stack.push(")")
+        self.stack.push("]")
+        self.stack.push("}")
+        self.stack.push("}")
+        self.stack.push("}")
+        actual = self.stack.has_balance()
+        self.assertEqual(actual, expected)
+
+    def test_stack_has_not_balance_3(self):
+        print("Test if stack isn't balanced 3: [[{())}] ")
+        expected = False
+        self.stack.push("[")
+        self.stack.push("[")
+        self.stack.push("{")
+        self.stack.push("(")
+        self.stack.push(")")
+        self.stack.push(")")
+        self.stack.push("}")
+        self.stack.push("]")
+        actual = self.stack.has_balance()
+        self.assertEqual(actual, expected)
+
+    def test_stack_has_not_balance_4(self):
+        print("Test if stack isn't balanced 4: [{}]))}] ")
+        expected = False
+        self.stack.push("[")
+        self.stack.push("{")
+        self.stack.push("}")
+        self.stack.push("]")
+        self.stack.push(")")
+        self.stack.push(")")
+        self.stack.push("}")
+        self.stack.push("]")
+        actual = self.stack.has_balance()
+        self.assertEqual(actual, expected)
 
 if __name__ == "__main__":
     unittest.main()
